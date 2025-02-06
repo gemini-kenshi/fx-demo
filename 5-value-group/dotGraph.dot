@@ -1,0 +1,115 @@
+digraph {
+	rankdir=RL;
+	graph [compound=true];
+	"[type=httpfx.Route group=routes]" [shape=diamond label=<httpfx.Route<BR /><FONT POINT-SIZE="10">Group: routes</FONT>>];
+		"[type=httpfx.Route group=routes]" -> "httpfx.Route[group=routes]0";
+		"[type=httpfx.Route group=routes]" -> "httpfx.Route[group=routes]1";
+		
+	
+		subgraph cluster_0 {
+			label = "go.uber.org/fx";
+			constructor_0 [shape=plaintext label="New.func1"];
+			
+			"fx.Lifecycle" [label=<fx.Lifecycle>];
+			
+		}
+		
+		
+		subgraph cluster_1 {
+			label = "go.uber.org/fx";
+			constructor_1 [shape=plaintext label="(*App).shutdowner-fm"];
+			
+			"fx.Shutdowner" [label=<fx.Shutdowner>];
+			
+		}
+		
+		
+		subgraph cluster_2 {
+			label = "go.uber.org/fx";
+			constructor_2 [shape=plaintext label="(*App).dotGraph-fm"];
+			
+			"fx.DotGraph" [label=<fx.DotGraph>];
+			
+		}
+		
+		
+		subgraph cluster_3 {
+			label = "github.com/gemini-kenshi/fx-demo/graphfx";
+			constructor_3 [shape=plaintext label="NewGraphPlotter"];
+			
+			"*graphfx.GraphPlotter" [label=<*graphfx.GraphPlotter>];
+			
+		}
+		
+			constructor_3 -> "fx.DotGraph" [ltail=cluster_3];
+		
+		
+		subgraph cluster_4 {
+			label = "github.com/gemini-kenshi/fx-demo/5-value-group/httpfx";
+			constructor_4 [shape=plaintext label="NewHTTPServer"];
+			
+			"*http.Server" [label=<*http.Server>];
+			
+		}
+		
+			constructor_4 -> "fx.Lifecycle" [ltail=cluster_4];
+		
+			constructor_4 -> "logfx.Logger" [ltail=cluster_4];
+		
+			constructor_4 -> "*http.ServeMux" [ltail=cluster_4];
+		
+		
+		subgraph cluster_5 {
+			label = "reflect";
+			constructor_5 [shape=plaintext label="makeFuncStub"];
+			
+			"*http.ServeMux" [label=<*http.ServeMux>];
+			
+		}
+		
+			constructor_5 -> "fx.Lifecycle" [ltail=cluster_5];
+		
+			constructor_5 -> "logfx.Logger" [ltail=cluster_5];
+		
+		
+			constructor_5 -> "[type=httpfx.Route group=routes]" [ltail=cluster_5];
+		
+		subgraph cluster_6 {
+			label = "reflect";
+			constructor_6 [shape=plaintext label="makeFuncStub"];
+			
+			"httpfx.Route[group=routes]0" [label=<httpfx.Route<BR /><FONT POINT-SIZE="10">Group: routes</FONT>>];
+			
+		}
+		
+			constructor_6 -> "fx.Lifecycle" [ltail=cluster_6];
+		
+			constructor_6 -> "logfx.Logger" [ltail=cluster_6];
+		
+		
+		subgraph cluster_7 {
+			label = "reflect";
+			constructor_7 [shape=plaintext label="makeFuncStub"];
+			
+			"httpfx.Route[group=routes]1" [label=<httpfx.Route<BR /><FONT POINT-SIZE="10">Group: routes</FONT>>];
+			
+		}
+		
+			constructor_7 -> "fx.Lifecycle" [ltail=cluster_7];
+		
+			constructor_7 -> "logfx.Logger" [ltail=cluster_7];
+		
+		
+		subgraph cluster_8 {
+			label = "github.com/gemini-kenshi/fx-demo/logfx";
+			constructor_8 [shape=plaintext label="NewLogger"];
+			
+			"logfx.Logger" [label=<logfx.Logger>];
+			
+		}
+		
+			constructor_8 -> "fx.Lifecycle" [ltail=cluster_8];
+		
+		
+	
+}
