@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"example.com/fxdemo/2-module/httpfx"
-	"example.com/fxdemo/2-module/logfx"
+	"example.com/fxdemo/3-decouple/httpfx"
+	"example.com/fxdemo/3-decouple/logfx"
 	"go.uber.org/fx"
 )
 

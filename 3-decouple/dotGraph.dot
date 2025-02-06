@@ -41,7 +41,7 @@ digraph {
 		
 		
 		subgraph cluster_4 {
-			label = "example.com/fxdemo/2-module/httpfx";
+			label = "example.com/fxdemo/3-decouple/httpfx";
 			constructor_4 [shape=plaintext label="NewHTTPServer"];
 			
 			"*http.Server" [label=<*http.Server>];
@@ -56,10 +56,10 @@ digraph {
 		
 		
 		subgraph cluster_5 {
-			label = "example.com/fxdemo/2-module/httpfx";
-			constructor_5 [shape=plaintext label="NewEchoHandler"];
+			label = "reflect";
+			constructor_5 [shape=plaintext label="makeFuncStub"];
 			
-			"*httpfx.EchoHandler" [label=<*httpfx.EchoHandler>];
+			"httpfx.Route" [label=<httpfx.Route>];
 			
 		}
 		
@@ -69,7 +69,7 @@ digraph {
 		
 		
 		subgraph cluster_6 {
-			label = "example.com/fxdemo/2-module/httpfx";
+			label = "example.com/fxdemo/3-decouple/httpfx";
 			constructor_6 [shape=plaintext label="NewServeMux"];
 			
 			"*http.ServeMux" [label=<*http.ServeMux>];
@@ -80,11 +80,11 @@ digraph {
 		
 			constructor_6 -> "logfx.Logger" [ltail=cluster_6];
 		
-			constructor_6 -> "*httpfx.EchoHandler" [ltail=cluster_6];
+			constructor_6 -> "httpfx.Route" [ltail=cluster_6];
 		
 		
 		subgraph cluster_7 {
-			label = "example.com/fxdemo/2-module/logfx";
+			label = "example.com/fxdemo/3-decouple/logfx";
 			constructor_7 [shape=plaintext label="NewLogger"];
 			
 			"logfx.Logger" [label=<logfx.Logger>];
