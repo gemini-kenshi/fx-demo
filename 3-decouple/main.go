@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"example.com/fxdemo/3-decouple/httpfx"
+	"example.com/fxdemo/graphfx"
 	"example.com/fxdemo/logfx"
 	"go.uber.org/fx"
 )
@@ -13,10 +14,10 @@ func main() {
 		httpfx.Module,
 		logfx.Module,
 
-		fx.Provide(NewGraphPlotter),
+		fx.Provide(graphfx.NewGraphPlotter),
 
 		fx.Invoke(func(*http.Server) {}),
-		fx.Invoke(func(g *GraphPlotter) {
+		fx.Invoke(func(g *graphfx.GraphPlotter) {
 			g.Plot()
 		}),
 	)

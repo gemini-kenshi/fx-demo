@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"example.com/fxdemo/graphfx"
 	"go.uber.org/fx"
 )
 
@@ -19,9 +20,9 @@ func main() {
 			NewServeMux,
 		),
 		fx.Provide(NewLogger),
-		fx.Provide(NewGraphPlotter),
+		fx.Provide(graphfx.NewGraphPlotter),
 		fx.Invoke(func(*http.Server) {}),
-		fx.Invoke(func(g *GraphPlotter) {
+		fx.Invoke(func(g *graphfx.GraphPlotter) {
 			g.Plot()
 		}),
 	)

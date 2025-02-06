@@ -30,10 +30,10 @@ digraph {
 		
 		
 		subgraph cluster_3 {
-			label = "main";
+			label = "example.com/fxdemo/graphfx";
 			constructor_3 [shape=plaintext label="NewGraphPlotter"];
 			
-			"*main.GraphPlotter" [label=<*main.GraphPlotter>];
+			"*graphfx.GraphPlotter" [label=<*graphfx.GraphPlotter>];
 			
 		}
 		
@@ -84,7 +84,7 @@ digraph {
 		
 		
 		subgraph cluster_7 {
-			label = "example.com/fxdemo/2-module/logfx";
+			label = "example.com/fxdemo/logfx";
 			constructor_7 [shape=plaintext label="NewLogger"];
 			
 			"logfx.Logger" [label=<logfx.Logger>];

@@ -84,10 +84,10 @@ digraph {
 		
 		
 		subgraph cluster_7 {
-			label = "main";
+			label = "example.com/fxdemo/graphfx";
 			constructor_7 [shape=plaintext label="NewGraphPlotter"];
 			
-			"*main.GraphPlotter" [label=<*main.GraphPlotter>];
+			"*graphfx.GraphPlotter" [label=<*graphfx.GraphPlotter>];
 			
 		}
 		
