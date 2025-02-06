@@ -30,7 +30,7 @@ digraph {
 		
 		
 		subgraph cluster_3 {
-			label = "example.com/fxdemo/graphfx";
+			label = "github.com/gemini-kenshi/fx-demo/graphfx";
 			constructor_3 [shape=plaintext label="NewGraphPlotter"];
 			
 			"*graphfx.GraphPlotter" [label=<*graphfx.GraphPlotter>];
@@ -41,7 +41,7 @@ digraph {
 		
 		
 		subgraph cluster_4 {
-			label = "example.com/fxdemo/3-decouple/httpfx";
+			label = "github.com/gemini-kenshi/fx-demo/3-decouple/httpfx";
 			constructor_4 [shape=plaintext label="NewHTTPServer"];
 			
 			"*http.Server" [label=<*http.Server>];
@@ -69,7 +69,7 @@ digraph {
 		
 		
 		subgraph cluster_6 {
-			label = "example.com/fxdemo/3-decouple/httpfx";
+			label = "github.com/gemini-kenshi/fx-demo/3-decouple/httpfx";
 			constructor_6 [shape=plaintext label="NewServeMux"];
 			
 			"*http.ServeMux" [label=<*http.ServeMux>];
@@ -84,7 +84,7 @@ digraph {
 		
 		
 		subgraph cluster_7 {
-			label = "example.com/fxdemo/logfx";
+			label = "github.com/gemini-kenshi/fx-demo/logfx";
 			constructor_7 [shape=plaintext label="NewLogger"];
 			
 			"logfx.Logger" [label=<logfx.Logger>];

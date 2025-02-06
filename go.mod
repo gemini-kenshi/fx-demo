@@ -1,4 +1,4 @@
-module example.com/fxdemo
+module github.com/gemini-kenshi/fx-demo
 
 go 1.23.4
 

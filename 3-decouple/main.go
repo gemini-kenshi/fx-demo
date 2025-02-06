@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
-	"example.com/fxdemo/3-decouple/httpfx"
-	"example.com/fxdemo/graphfx"
-	"example.com/fxdemo/logfx"
+	"github.com/gemini-kenshi/fx-demo/3-decouple/httpfx"
+	"github.com/gemini-kenshi/fx-demo/graphfx"
+	"github.com/gemini-kenshi/fx-demo/logfx"
 	"go.uber.org/fx"
 )
 

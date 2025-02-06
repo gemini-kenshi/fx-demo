@@ -84,7 +84,7 @@ digraph {
 		
 		
 		subgraph cluster_7 {
-			label = "example.com/fxdemo/graphfx";
+			label = "github.com/gemini-kenshi/fx-demo/graphfx";
 			constructor_7 [shape=plaintext label="NewGraphPlotter"];
 			
 			"*graphfx.GraphPlotter" [label=<*graphfx.GraphPlotter>];

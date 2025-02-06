@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 
-	"example.com/fxdemo/logfx"
+	"github.com/gemini-kenshi/fx-demo/logfx"
 	"go.uber.org/fx"
 )
 

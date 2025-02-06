@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"example.com/fxdemo/graphfx"
+	"github.com/gemini-kenshi/fx-demo/graphfx"
 	"go.uber.org/fx"
 )
 
