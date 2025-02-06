@@ -5,7 +5,7 @@ import (
 	"net"
 	"net/http"
 
-	"example.com/fxdemo/3-decouple/logfx"
+	"example.com/fxdemo/logfx"
 	"go.uber.org/fx"
 )
 

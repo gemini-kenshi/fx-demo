@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"example.com/fxdemo/2-module/httpfx"
-	"example.com/fxdemo/2-module/logfx"
+	"example.com/fxdemo/logfx"
 	"go.uber.org/fx"
 )
 

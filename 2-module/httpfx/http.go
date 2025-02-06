@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 
-	"example.com/fxdemo/2-module/logfx"
+	"example.com/fxdemo/logfx"
 	"go.uber.org/fx"
 )
 
