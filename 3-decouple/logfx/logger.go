@@ -1,10 +1,14 @@
-package main
+package logfx
 
 import (
 	"context"
 
 	"github.com/sirupsen/logrus"
 	"go.uber.org/fx"
+)
+
+var Module = fx.Module("log",
+	fx.Provide(NewLogger),
 )
 
 type Logger interface {
@@ -16,7 +20,6 @@ func NewLogger(lc fx.Lifecycle) Logger {
 	lc.Append(fx.Hook{
 		OnStart: func(ctx context.Context) error {
 			logger.Info("Starting logger")
-
 			return nil
 		},
 	})

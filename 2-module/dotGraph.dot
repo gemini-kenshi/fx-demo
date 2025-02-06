@@ -1,0 +1,98 @@
+digraph {
+	rankdir=RL;
+	graph [compound=true];
+	
+		subgraph cluster_0 {
+			label = "go.uber.org/fx";
+			constructor_0 [shape=plaintext label="New.func1"];
+			
+			"fx.Lifecycle" [label=<fx.Lifecycle>];
+			
+		}
+		
+		
+		subgraph cluster_1 {
+			label = "go.uber.org/fx";
+			constructor_1 [shape=plaintext label="(*App).shutdowner-fm"];
+			
+			"fx.Shutdowner" [label=<fx.Shutdowner>];
+			
+		}
+		
+		
+		subgraph cluster_2 {
+			label = "go.uber.org/fx";
+			constructor_2 [shape=plaintext label="(*App).dotGraph-fm"];
+			
+			"fx.DotGraph" [label=<fx.DotGraph>];
+			
+		}
+		
+		
+		subgraph cluster_3 {
+			label = "main";
+			constructor_3 [shape=plaintext label="NewGraphPlotter"];
+			
+			"*main.GraphPlotter" [label=<*main.GraphPlotter>];
+			
+		}
+		
+			constructor_3 -> "fx.DotGraph" [ltail=cluster_3];
+		
+		
+		subgraph cluster_4 {
+			label = "example.com/fxdemo/2-module/httpfx";
+			constructor_4 [shape=plaintext label="NewHTTPServer"];
+			
+			"*http.Server" [label=<*http.Server>];
+			
+		}
+		
+			constructor_4 -> "fx.Lifecycle" [ltail=cluster_4];
+		
+			constructor_4 -> "logfx.Logger" [ltail=cluster_4];
+		
+			constructor_4 -> "*http.ServeMux" [ltail=cluster_4];
+		
+		
+		subgraph cluster_5 {
+			label = "example.com/fxdemo/2-module/httpfx";
+			constructor_5 [shape=plaintext label="NewEchoHandler"];
+			
+			"*httpfx.EchoHandler" [label=<*httpfx.EchoHandler>];
+			
+		}
+		
+			constructor_5 -> "fx.Lifecycle" [ltail=cluster_5];
+		
+			constructor_5 -> "logfx.Logger" [ltail=cluster_5];
+		
+		
+		subgraph cluster_6 {
+			label = "example.com/fxdemo/2-module/httpfx";
+			constructor_6 [shape=plaintext label="NewServeMux"];
+			
+			"*http.ServeMux" [label=<*http.ServeMux>];
+			
+		}
+		
+			constructor_6 -> "fx.Lifecycle" [ltail=cluster_6];
+		
+			constructor_6 -> "logfx.Logger" [ltail=cluster_6];
+		
+			constructor_6 -> "*httpfx.EchoHandler" [ltail=cluster_6];
+		
+		
+		subgraph cluster_7 {
+			label = "example.com/fxdemo/2-module/logfx";
+			constructor_7 [shape=plaintext label="NewLogger"];
+			
+			"logfx.Logger" [label=<logfx.Logger>];
+			
+		}
+		
+			constructor_7 -> "fx.Lifecycle" [ltail=cluster_7];
+		
+		
+	
+}
